@@ -28,10 +28,10 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
+    env:
+        MY_EMAIL: cstewart2010@gmail.com
+        MY_NAME: Charles
     steps:
-      env:
-          MY_EMAIL: cstewart2010@gmail.com
-          MY_NAME: Charles
       - name: Checkout
         uses: actions/checkout@v3
       - name: Setup Node.js environment
