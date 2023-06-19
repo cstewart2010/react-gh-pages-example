@@ -29,6 +29,9 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
+      env:
+          MY_EMAIL: cstewart2010@gmail.com
+          MY_NAME: Charles
       - name: Checkout
         uses: actions/checkout@v3
       - name: Setup Node.js environment
@@ -38,4 +41,7 @@ jobs:
       - name: Build App
         run: npm run build
       - name: Setup Pages
+        run: git config --global user.email $MY_EMAIL
+        run: git config --global user.name $MY_NAME
+        run: git remote set-url origin https://$MY_NAME:${{ secrets.PS }}@github.com/cstewart2010/react-gh-pages-example.git
         run: npm run deploy
