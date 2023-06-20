@@ -28,9 +28,9 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
-    env:
-        MY_EMAIL: cstewart2010@gmail.com
-        MY_NAME: cstewart2010
+    # env:
+    #     MY_EMAIL: cstewart2010@gmail.com
+    #     MY_NAME: cstewart2010
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -40,10 +40,10 @@ jobs:
         run: npm install
       - name: Build App
         run: npm run build
-      - name: Setup Git Email
-        run: git config --global user.email $MY_EMAIL
-      - name: Setup Git Username
-        run: git config --global user.name $MY_NAME
+      # - name: Setup Git Email
+      #   run: git config --global user.email $MY_EMAIL
+      # - name: Setup Git Username
+      #   run: git config --global user.name $MY_NAME
       - name: Setup Git Remote
         run: git remote set-url origin https://x-access-token:${{ secrets.GIT_TOKEN }}@github.com/$MY_NAME/react-gh-pages-example.git
       - name: Deploy app
