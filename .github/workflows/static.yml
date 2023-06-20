@@ -45,6 +45,6 @@ jobs:
       - name: Setup Git Username
         run: git config --global user.name $MY_NAME
       - name: Setup Git Remote
-        run: git remote set-url origin https://$MY_NAME:${{ secrets.PS }}@github.com/cstewart2010/react-gh-pages-example.git
+        run: git remote set-url origin https://x-access-token:${{ secrets.GIT_TOKEN }}@github.com/react-gh-pages-example.git
       - name: Deploy app
         run: npm run deploy
