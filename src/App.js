@@ -17,7 +17,7 @@ function App() {
         >
           Learn React
         </a>
-        <p>Please show up</p>
+        <p>Please show up this time as well</p>
       </header>
     </div>
   );
